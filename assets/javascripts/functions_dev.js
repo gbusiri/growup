@@ -119,8 +119,7 @@ function startButterflyAnimation() {
 					progress = (current == '<' ? text.indexOf('>', progress) : progress) + 1;
 					$ele.html(text.substr(0, progress) + ((progress & 1) && progress < text.length ? '_' : ''));
 					if ($audio.ended || $audio.paused) $audio.play();
-					if (progress < text.length) loop();  
-					else $audio.pause();
+					if (progress < text.length) loop();
 			    }, rand);
 			}());
 		});
