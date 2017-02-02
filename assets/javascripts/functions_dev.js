@@ -118,7 +118,6 @@ function startButterflyAnimation() {
 					var current = text.substr(progress, 1);
 					progress = (current == '<' ? text.indexOf('>', progress) : progress) + 1;
 					$ele.html(text.substr(0, progress) + ((progress & 1) && progress < text.length ? '_' : ''));
-					if ($audio.ended || $audio.paused) $audio.play();
 			    }, rand);
 			}());
 		});
