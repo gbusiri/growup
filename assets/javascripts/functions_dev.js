@@ -126,10 +126,10 @@ function startButterflyAnimation() {
 	};
 })(jQuery);
 
-$(function(){
-    var audio = document.getElementById("sound");
-    audio.play();
-});
+// $(function(){
+//     var audio = document.getElementById("sound");
+//     audio.play();
+// });
 
 function timeElapse(date){
 	var current = Date();
