@@ -110,7 +110,7 @@ function startButterflyAnimation() {
 			var $ele = $(this), text = $ele.html(), progress = 0, maxSpeed = 95, minSpeed = 45, rand;
 			$ele.html('');
 			/* type sound */
-			$audio = $("#sound")[0];
+			// $audio = $("#sound")[0];
 			/* random typing speed to make it more real */
 			(function loop() {
 			    setTimeout(function() {
@@ -118,12 +118,18 @@ function startButterflyAnimation() {
 					var current = text.substr(progress, 1);
 					progress = (current == '<' ? text.indexOf('>', progress) : progress) + 1;
 					$ele.html(text.substr(0, progress) + ((progress & 1) && progress < text.length ? '_' : ''));
+					// if ($audio.ended || $audio.paused) $audio.play();
 			    }, rand);
 			}());
 		});
 		return this;
 	};
 })(jQuery);
+
+$(function(){
+    var audio = document.getElementById("sound");
+    audio.play();
+});
 
 function timeElapse(date){
 	var current = Date();
